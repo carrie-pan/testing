@@ -1,0 +1,34 @@
+﻿(資料來源: http://ihower.tw/git/remote.html )
+在 Github 上	Clone 下來
+git clone git@github.com:ihower/sandbox.git
+如果沒有寫入權限(Collaborators)的話，因為這個專案是公開的，所以你還是可以用Git協定Clone下來：
+
+git clone git://github.com/ihower/sandbox.git
+如果有防火牆問題，改用 HTTPS 協定：
+
+git clone https://github.com/ihower/sandbox.git
+Pull - 從遠端更新
+
+git pull 或 git pull origin master
+實際作用是先 git fetch 遠端的 branch，然後與本地端的 branch 做 merge，產生一個 merge commit 節點
+
+所謂的”遠端”預設叫做origin，當你有多個不同遠端伺服器時，就會取不同名子了。
+Push - 將 Commit 送出去
+
+git push 或 git push origin master
+實際的作用是將本地端的 master branch 與遠端的 master branch 作 fast-forward 合併。
+如果出現 [rejected] 錯誤的話，表示你必須先作 pull。
+
+****	預設不會 push tags 資訊	****
+git push --tags
+
+****	列出和取出遠端 branch	****
+git branch -r
+git checkout -t origin/foobar
+git branch -r --merged (列出已經被合併的)	
+
+****	刪除遠端 branch	****
+git push origin :foobar (刪除遠端branch)
+git pull 和 git fetch 不會清除已經被刪掉的 branch
+請用 git fetch -p
+git push –tags

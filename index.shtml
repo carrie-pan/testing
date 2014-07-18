@@ -1,0 +1,14 @@
+﻿<!--#include virtual="header.html" --> 
+Hi there. This is use shtml.<br/>
+<dl>
+	<dd>AddType text/html .shtml</dt>
+	<dd>AddHandler server-parsed .shtml</dd>
+	<dd>Options Indexes FollowSymLinks Includes</dd>
+</dl>
+<!--#config timefmt="%Y年%m月%d日" -->
+<!--#echo encoding="none" var="DATE_LOCAL" -->
+<!--#set var=slogan value="測試用的" -->
+<!--#echo encoding="none" var=slogan -->
+<!--#config errmsg="[SOMETHING ERROR]" -->
+<!--#exec cmd="ls -l" -->
+<!--#include virtual="footer.html" --> 
